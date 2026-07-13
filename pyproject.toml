@@ -1,0 +1,30 @@
+[project]
+name = "genz-slang-translator"
+version = "0.1.0"
+description = "Bidirectional Gen Z/Alpha slang <-> English translator, fine-tuned from Llama 3.2 3B (QLoRA)."
+requires-python = "==3.11.*"
+
+# Core deps: needed for data preparation. These install fine on any machine (no GPU).
+dependencies = [
+    "pandas>=2.2",
+    "openpyxl>=3.1",        # read the .xlsx sources
+    "datasets>=2.19",       # load jsonl into HF Datasets for training
+]
+
+[project.optional-dependencies]
+# Training deps: only needed on a T4 GPU (local or Colab). Installed separately
+# because torch/unsloth are heavy and GPU-specific. See the notebook's install cell.
+train = [
+    "torch",
+    "transformers>=4.44",
+    "trl>=0.9",
+    "peft>=0.12",
+    "bitsandbytes>=0.43",
+    "accelerate>=0.33",
+    # unsloth is installed via its own install line on Colab (see notebook).
+]
+
+[tool.uv]
+# This is an application/notebook project, not an installable library, so don't
+# try to build it as a package. Scripts run via `uv run python src/...`.
+package = false

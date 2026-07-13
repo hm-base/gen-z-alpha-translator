@@ -1,0 +1,27 @@
+existing dataset found
+
+genz_slang_dataset_final(2020_2026).csv,https://www.kaggle.com/datasets/sankhepsahoo1/genz-slang-dataset-final2020-2026
+genz_dataset_augmented_1500.csv,https://www.kaggle.com/datasets/sankhepsahoo1/a1-genz-slang-normalization-dataset-nlp2020-2026
+genz_slang_dataset_final(2020_2026).csv,https://www.kaggle.com/datasets/sankhepsahoo1/genz-slang-dataset-final2020-2026
+xxxxx >>> genz_synthetic_dataset.csv,https://www.kaggle.com/datasets/sankhepsahoo1/genz-slang-synthetic-dataset
+genz_dataset_model_ready.csv,https://www.kaggle.com/datasets/sankhepsahoo1/genz-slang-normalization-dataset-nlp2020-2026
+genz_slang.csv,https://www.kaggle.com/datasets/vivekkapri/gen-z-and-internet-slang-dictionary
+slang.csv,https://www.kaggle.com/datasets/sadmanhasib/gen-z-slang
+all_slangs.csv,https://huggingface.co/datasets/MLBtrio/genz-slang-dataset/blob/main/all_slangs.csv
+KamusGenAlpa.xlsx,https://www.kaggle.com/datasets/sunnysunshine001/generation-alpha-slang-tweets?resource=download
+XXXXX >>> final dataset.xlsx,https://www.kaggle.com/datasets/sunnysunshine001/generation-alpha-slang-tweets?resource=download&select=final+dataset.xlsx
+genz_dataset.csv,https://www.kaggle.com/datasets/programmerrdai/genz-slang-pairs-1k
+genz_slang_usage_2020_2025.csv,https://www.kaggle.com/datasets/likithagedipudi/genz-slang-evolution-tracker-2020-2025/data
+gen_zz_words.csv,https://www.kaggle.com/datasets/tawfiayeasmin/gen-z-words-and-phrases-dataset
+
+
+
+Why we not using(if any
+
+genz_slang_merged.csv.xlsx,The merge lost its column headers (they show up as 0,1,2... instead of names), so the prep script can't tell which column is slang vs English. Your other files carry the same content with proper labels.
+final dataset.xlsx,It's Keyword + step2 (raw scraped social-media text like "wrong i ate them all"). It has slang examples but no English translation paired with them — and we need pairs to train a translator. Great as raw material, not usable as-is.
+KamusGenAlpa.xlsx,Only ~68 rows and its columns are just 0/1 (unlabeled). Tiny and unclear — not worth the cleanup when you already have thousands of clean pairs.
+genz_slang_usage_2020_2025.csv,99 MB of usage/frequency data. It's about how often slang appears over time, not slang↔English pairs. Wrong shape for translation, and huge.
+genz_dataset_model_ready.csv,~334 rows that are a subset already contained in genz_dataset_augmented_1500. Using both would just create duplicates.
+genz_slang_dataset_final(2020_2026).csv,Same ~334 rows again (slang_term + meaning + example), overlapping the augmented file. Duplicate content.
+links.csv,Empty (0 bytes) — probably a list of source URLs that never got filled in.
