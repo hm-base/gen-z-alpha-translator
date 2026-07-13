@@ -11,6 +11,7 @@ dependencies = [
     "datasets>=2.19",       # load jsonl into HF Datasets for training
     "unsloth>=2026.7.2",
     "ipykernel>=6.29",      # lets VS Code / Jupyter run the notebook against this venv
+    "gradio>=6.20.0",
 ]
 
 [project.optional-dependencies]
