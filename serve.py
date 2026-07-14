@@ -22,8 +22,8 @@ import uvicorn
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
-from config import TAG_TO_ENGLISH, TAG_TO_SLANG, ABSTAIN_MESSAGE  # noqa: E402
-from abstain import looks_unclear  # noqa: E402
+from config import ABSTAIN_MESSAGE  # noqa: E402
+from translate_core import translate as core_translate  # noqa: E402
 
 ADAPTER_DIR = ROOT / "genz_lora_adapter"
 HTML_PATH = ROOT / "docs" / "slangify_mockup.html"
@@ -42,22 +42,6 @@ print(">> model ready")
 
 import threading
 _gen_lock = threading.Lock()   # serialize GPU calls so concurrent requests don't collide
-
-def run_model(tag: str, text: str) -> str:
-    msgs = [{"role": "user", "content": f"{tag}\n{text}"}]
-    enc = tokenizer.apply_chat_template(
-        msgs, tokenize=True, add_generation_prompt=True,
-        return_tensors="pt", return_dict=True,
-    ).to("cuda")
-    with _gen_lock:
-        out = model.generate(
-            input_ids=enc["input_ids"],
-            attention_mask=enc.get("attention_mask"),
-            max_new_tokens=80, use_cache=True, do_sample=False,
-            repetition_penalty=1.3, no_repeat_ngram_size=3,   # stop the "letaleta…" loops
-            pad_token_id=tokenizer.eos_token_id,
-        )
-    return tokenizer.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
 
 app = FastAPI()
@@ -81,11 +65,9 @@ def health():
 @app.post("/api/translate")
 def translate(req: Req):
     text = (req.text or "").strip()
-    # Abstention guard: decline clearly-unclear input instead of hallucinating.
-    if looks_unclear(text):
-        return JSONResponse({"output": ABSTAIN_MESSAGE, "abstained": True})
-    tag = TAG_TO_SLANG if req.direction == "to_slang" else TAG_TO_ENGLISH
-    return JSONResponse({"output": run_model(tag, text)})
+    with _gen_lock:   # one GPU call at a time
+        out = core_translate(model, tokenizer, text, req.direction, use_guard=True)
+    return JSONResponse({"output": out, "abstained": out == ABSTAIN_MESSAGE})
 
 
 if __name__ == "__main__":

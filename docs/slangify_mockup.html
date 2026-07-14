@@ -386,6 +386,7 @@
   function renderSender(){
     senderThread.innerHTML='';
     convo.forEach(m=>{
+      if(m.who==='probe') return;   // receiver-only test messages don't post here
       const mine=m.who==='jamie';
       const row=document.createElement('div'); row.className='row '+(mine?'me':'them');
       const showSlang = mine ? slangifyOn() : true;
@@ -447,9 +448,9 @@
     const inp=$('draftR'); const s=inp.value.trim(); if(!s) return;
     inp.value='';
     const idx=convo.length;
-    convo.push({who:'jamie', english:'', slang:s});  // incoming slang message
+    convo.push({who:'probe', english:'', slang:s});  // receiver-side test message only
     revealed.add(idx);                                // show its live-model translation
-    renderSender(); renderReceiver();
+    renderReceiver();
   }
 
   // ---- receiver context menu ----
@@ -466,7 +467,7 @@
       };
     });
   }
-  $('ctxTranslate').onclick=(e)=>{e.stopPropagation(); if(ctxTarget!=null){revealed.add(ctxTarget);renderReceiver();} ctx.style.display='none';};
+  $('ctxTranslate').onclick=(e)=>{e.stopPropagation(); if(ctxTarget!=null){const m=convo[ctxTarget]; if(m) xcache.delete(m.slang); revealed.add(ctxTarget); renderReceiver();} ctx.style.display='none';};
   document.addEventListener('click',()=>{ctx.style.display='none';});
 
   function bindToggle(id,after){const el=$(id);el.addEventListener('click',()=>{el.setAttribute('aria-pressed',el.getAttribute('aria-pressed')==='true'?'false':'true');after();});}
