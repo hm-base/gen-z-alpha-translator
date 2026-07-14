@@ -278,6 +278,11 @@ def main() -> int:
     train_examples.extend(abstain_examples)
     print(f"Added {len(abstain_examples)} abstain (unclear->decline) training examples.")
 
+    # Shuffle so BOTH directions, all sources, and the abstain examples are mixed
+    # throughout. Otherwise a prefix sample (e.g. train[:6000]) would be all
+    # translation pairs and never see an abstain example. Seeded = reproducible.
+    rng.shuffle(train_examples)
+
     # Safety: eval inputs must NOT appear as training targets/inputs.
     eval_inputs = {it["input"].lower() for it in eval_items}
     leak = sum(
