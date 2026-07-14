@@ -78,15 +78,23 @@ If you don't have an NVIDIA GPU, do data work here and train on Colab (section A
 
 ---
 
-## Using the app later (WITHOUT re-running the notebook)
+## Two ways to run the translator (no re-training needed)
 
-Once training has run once, an adapter is saved to `genz_lora_adapter/`. After that, launch
-the chat app directly — no training, no Run All:
+Once training has run once, an adapter is saved to `genz_lora_adapter/`. After that you have
+**two entry points** — both load base + adapter and use the same model, pick based on the moment:
+
+| Command | What it is | Use it for |
+|---|---|---|
+| `uv run python serve.py` | **Main demo** — the two-phone Slangify chat at http://127.0.0.1:8010 | The Friday presentation |
+| `uv run python app.py` | **Simple fallback** — a plain Gradio chat box; prints a **public share link** | A quick test, a link to send, or a bulletproof backup if the demo page acts up |
+
+### Simple app / fallback: `app.py`
 ```bash
 uv run python app.py
 ```
-It loads the base model + your saved adapter and opens the Gradio chat box in your browser.
-(Edit the last line of `app.py` to `app.launch(share=True)` if you want a public link to show others.)
+Loads the model and opens a Gradio chat box. It uses `share=True`, so it prints a **public URL**
+(valid ~72h) you can send to teammates or open on your phone. This is the safety net for the
+presentation — if the fancy demo page has trouble, this always works.
 
 ### Nicer demo: the messaging-app mockup (real model)
 For the presentation there's a chat-app style demo (a "Slangify" sender phone + auto-translate

@@ -8,7 +8,7 @@ data/raw/  (you drop files here)  →  [prep script]  →  data/processed/train.
 
 ## Folder layout
 - `raw/` — datasets that WILL be trained on (must pass the checklist below).
-- `dictionaries/` — slang→meaning word lists, used to build the test-set answer key (not training sentences).
+- `dictionaries/` — slang→meaning word lists + emoji meanings. Each entry becomes a short term↔meaning training example (see `DICT_SOURCES` in `src/config.py`); slang dicts go both directions, emoji dicts are emoji→meaning only.
 - `processed/` — auto-generated clean files. **Do not edit by hand.**
 - `unused/` — files we decided not to use, kept for reference.
 - `source info.csv` — where each file came from (URL) + reasons for anything unused.

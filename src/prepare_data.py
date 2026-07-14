@@ -24,6 +24,8 @@ from collections import Counter
 import pandas as pd
 
 from config import (
+    DICT_DIR,
+    DICT_SOURCES,
     EVAL_PATH,
     EVAL_PER_DIRECTION,
     N_ABSTAIN_TRAIN,
@@ -210,6 +212,49 @@ def build_train(train_rows: list[dict]) -> list[dict]:
     return examples
 
 
+def build_dictionary(banned: set) -> list[dict]:
+    """Turn dictionary term<->meaning entries into short training examples.
+
+    Slang dicts contribute BOTH directions (term<->meaning); emoji dicts are
+    one-way (emoji -> meaning). Rows whose text collides with the frozen eval
+    set are skipped. Deduped against itself.
+    """
+    seen = set()
+    examples = []
+    for src in DICT_SOURCES:
+        path = DICT_DIR / src["file"]
+        if not path.exists():
+            print(f"  !! dict SKIP: {src['file']} not found in data/dictionaries/")
+            continue
+        df = pd.read_csv(path)
+        if src["term_col"] not in df.columns or src["meaning_col"] not in df.columns:
+            print(f"  !! dict SKIP: {src['file']} missing columns")
+            continue
+        n = 0
+        for _, row in df.iterrows():
+            term = _clean(row.get(src["term_col"]))
+            meaning = _clean(row.get(src["meaning_col"]))
+            # skip empties, the odd repeated-header row, and eval collisions
+            if not term or not meaning or term.lower() == meaning.lower():
+                continue
+            if term.lower() == src["term_col"].lower():
+                continue
+            if term.lower() in banned or meaning.lower() in banned:
+                continue
+            pairs = [(TAG_TO_ENGLISH, term, meaning)]
+            if not src.get("emoji"):                       # emoji is one-way only
+                pairs.append((TAG_TO_SLANG, meaning, term))
+            for tag, src_text, tgt_text in pairs:
+                key = (tag, src_text.lower(), tgt_text.lower())
+                if key in seen:
+                    continue
+                seen.add(key)
+                examples.append(to_chat(tag, src_text, tgt_text))
+                n += 1
+        print(f"  ok: dict {src['file']:<24} -> {n:>5} examples")
+    return examples
+
+
 def write_jsonl(path, rows) -> None:
     with open(path, "w", encoding="utf-8") as f:
         for row in rows:
@@ -277,6 +322,11 @@ def main() -> int:
     abstain_examples = make_abstain_train_examples(rng, N_ABSTAIN_TRAIN)
     train_examples.extend(abstain_examples)
     print(f"Added {len(abstain_examples)} abstain (unclear->decline) training examples.")
+
+    # Learn vocabulary from the dictionaries (term<->meaning + emoji->meaning).
+    dict_examples = build_dictionary(banned_from_eval(eval_items))
+    train_examples.extend(dict_examples)
+    print(f"Added {len(dict_examples)} dictionary (term<->meaning) training examples.")
 
     # Shuffle so BOTH directions, all sources, and the abstain examples are mixed
     # throughout. Otherwise a prefix sample (e.g. train[:6000]) would be all

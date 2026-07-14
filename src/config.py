@@ -56,6 +56,20 @@ SOURCES = [
     },
 ]
 
+# ---------------------------------------------------------------------------
+# Dictionary sources (data/dictionaries/). Each term<->meaning entry becomes a
+# short training example in BOTH directions, so the model learns vocabulary
+# (helps the harder slang->English direction). Emoji entries are one-way
+# (emoji -> meaning). These are curated/clean; we do NOT pull Urban Dictionary
+# (crowd-sourced, often NSFW/joke, network-dependent).
+# ---------------------------------------------------------------------------
+DICT_SOURCES = [
+    {"file": "all_slangs.csv",   "term_col": "Slang",       "meaning_col": "Description"},
+    {"file": "gen_zz_words.csv", "term_col": "Word/Phrase", "meaning_col": "Definition"},
+    {"file": "genz_slang.csv",   "term_col": "Word",        "meaning_col": "Meaning"},
+    {"file": "genz_emojis.csv",  "term_col": "emoji",       "meaning_col": "Description", "emoji": True},
+]
+
 # How many eval items to freeze PER DIRECTION (spec: ~30 each -> ~60 total).
 EVAL_PER_DIRECTION = 30
 
