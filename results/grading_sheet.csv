@@ -1,12 +1,12 @@
-id,direction,strat,input,reference,slang_term,meaning,base_output,tuned_output,base_rater1,base_rater2,tuned_rater1,tuned_rater2
-e2e_000,to_english,real,She has such beta af energy today.,She has such extremely beta energy today.,beta af,extremely beta,"The translation to English is:
+id,type,direction,strat,input,reference,slang_term,meaning,base_output,tuned_output,base_rater1,base_rater2,tuned_rater1,tuned_rater2
+e2e_000,translate,to_english,real,She has such beta af energy today.,She has such extremely beta energy today.,beta af,extremely beta,"The translation to English is:
 
 ""She has such a lot of energy today.""
 
 Or, in a more casual and informal tone:
 
 ""She's got so much energy today.""",She has such extremely beta energy today.,,,,
-e2s_000,to_slang,real,She has such extremely beta energy today.,She has such beta af energy today.,beta af,extremely beta,"To translate that to Gen Z slang, I'd say:
+e2s_000,translate,to_slang,real,She has such extremely beta energy today.,She has such beta af energy today.,beta af,extremely beta,"To translate that to Gen Z slang, I'd say:
 
 ""She's low-key savage today.""
 
@@ -16,12 +16,12 @@ Here's a breakdown of the translation:
 - ""Savage"" is a term used to describe someone who's being ruthless, fierce, or unapologetically themselves, often in a humorous or playful way.
 
 So",She has such beta af energy today.,,,,
-e2e_001,to_english,trending,He was being totally lowkey take at the party.,He was being totally somewhat secretly at the party.,lowkey take,somewhat secretly,"The translation is:
+e2e_001,translate,to_english,trending,He was being totally lowkey take at the party.,He was being totally somewhat secretly at the party.,lowkey take,somewhat secretly,"The translation is:
 
 ""He was being totally low-key at the party.""
 
-In this context, ""lowkey"" is an adjective that means secretly, quietly, or not openly. So, the sentence is saying that he was being secretive or unobtrusive at the party, perhaps not drawing attention to himself.",He was being totally extremely somewhat secretly at the party.,,,,
-e2s_001,to_slang,trending,He was being totally somewhat secretly at the party.,He was being totally lowkey take at the party.,lowkey take,somewhat secretly,"Here's the translation:
+In this context, ""lowkey"" is an adjective that means secretly, quietly, or not openly. So, the sentence is saying that he was being secretive or unobtrusive at the party, perhaps not drawing attention to himself.",He was being totally extremely lowkey at the party.,,,,
+e2s_001,translate,to_slang,trending,He was being totally somewhat secretly at the party.,He was being totally lowkey take at the party.,lowkey take,somewhat secretly,"Here's the translation:
 
 ""He was low-key, high-key hiding it, but also kinda sneaking around at the party.""
 
@@ -30,8 +30,8 @@ Here's a breakdown of the slang used:
 - ""Low-key"" means secretly or quietly.
 - ""High-key"" means openly or obviously.
 - ""Hiding it"" means keeping something private or concealed.
-- ""Sneaking around"" means moving around discreetly or",He was being totally lowkey af at the party.,,,,
-e2e_002,to_english,viral,My friend group chat was giving fr energy all day.,My friend group chat was giving extremely for real energy all day.,so fr,extremely for real,"The translation of the given phrase to English is:
+- ""Sneaking around"" means moving around discreetly or",He was being totally lowkey at the party.,,,,
+e2e_002,translate,to_english,viral,My friend group chat was giving fr energy all day.,My friend group chat was giving extremely for real energy all day.,so fr,extremely for real,"The translation of the given phrase to English is:
 
 ""My friend group chat was giving me all the energy I needed all day.""
 
@@ -43,8 +43,8 @@ Or, in a more casual tone:
 
 ""My friend group chat was giving me all the energy I needed today.""
 
-But the most common translation would",My friend group chat was giving extremely for real energy all day.,,,,
-e2s_002,to_slang,viral,My friend group chat was giving extremely for real energy all day.,My friend group chat was giving fr energy all day.,so fr,extremely for real,"The translation to Gen Z slang would be:
+But the most common translation would","My friend group chat was giving for real, seriously energy all day.",,,,
+e2s_002,translate,to_slang,viral,My friend group chat was giving extremely for real energy all day.,My friend group chat was giving fr energy all day.,so fr,extremely for real,"The translation to Gen Z slang would be:
 
 ""My squad's group chat was straight fire all day, no cap.""
 
@@ -53,10 +53,10 @@ Here's a breakdown of the translation:
 - ""Squad"" refers to a close-knit group of friends.
 - ""Group chat"" is a chat room for a group of people.
 - ""Straight fire"" means something is exceptionally good or exciting.
-- ""No cap"" is",My friend group chat was giving fr af energy all day.,,,,
-e2e_003,to_english,real,That fit is so he cooked.,That outfit is so he did it perfectly.,so he cooked,extremely he did it perfectly,"The translation of ""That fit is so he cooked"" to English is: ""That fits is so he cooks.""",That outfit is so he did it perfectly.,,,,
-e2s_003,to_slang,real,That outfit is so he did it perfectly.,That fit is so he cooked.,so he cooked,extremely he did it perfectly,"That outfit is straight fire, no cap.",That fit is so he cooked.,,,,
-e2e_004,to_english,trending,"You cooked so hard, that was peak ghosted af.","You did so well, that was peak extremely stopped responding completely.",ghosted af,extremely stopped responding completely,"The translation of the given phrase is:
+- ""No cap"" is",My friend group chat was giving fr energy all day.,,,,
+e2e_003,translate,to_english,real,That fit is so he cooked.,That outfit is so he did it perfectly.,so he cooked,extremely he did it perfectly,"The translation of ""That fit is so he cooked"" to English is: ""That fits is so he cooks.""",That outfit is so he did it perfectly.,,,,
+e2s_003,translate,to_slang,real,That outfit is so he did it perfectly.,That fit is so he cooked.,so he cooked,extremely he did it perfectly,"That outfit is straight fire, no cap.",That fit is so he cooked.,,,,
+e2e_004,translate,to_english,trending,"You cooked so hard, that was peak ghosted af.","You did so well, that was peak extremely stopped responding completely.",ghosted af,extremely stopped responding completely,"The translation of the given phrase is:
 
 ""You cooked so hard, that was peak ghosted af.""
 
@@ -64,8 +64,8 @@ This phrase is a play on words, using a combination of slang and internet cultur
 
 - ""Cooked"" is a slang term that means to get someone's attention, often in a romantic or social context. It's similar to saying ""hit it hard"" or ""make a move.""
 
--","You did so well, that was peak extremely stopped responding completely.",,,,
-e2s_004,to_slang,trending,"You did so well, that was peak extremely stopped responding completely.","You cooked so hard, that was peak ghosted af.",ghosted af,extremely stopped responding completely,"Here's the translation to Gen Z slang:
+-","You did so well, that was peak extremely being genuinely shocked.",,,,
+e2s_004,translate,to_slang,trending,"You did so well, that was peak extremely stopped responding completely.","You cooked so hard, that was peak ghosted af.",ghosted af,extremely stopped responding completely,"Here's the translation to Gen Z slang:
 
 ""You crushed it, that was lowkey fire, but then you just ghosted everyone and stopped responding, no cap.""
 
@@ -73,11 +73,11 @@ Here's a breakdown of the slang used:
 
 - ""Crushed it"" means you did an amazing job.
 - ""Lowkey fire"" means something was really good, but not extremely good (it's a subtle compliment).
-- ""","You cooked so hard, that was peak ghosted.",,,,
-e2e_005,to_english,viral,Not me acting all iykyk at the worst time.,Not me acting all if you know you know at the worst time.,iykyk,if you know you know,"The translation of the given phrase in English is:
+- ""","You cooked so hard, that was peak bricked.",,,,
+e2e_005,translate,to_english,viral,Not me acting all iykyk at the worst time.,Not me acting all if you know you know at the worst time.,iykyk,if you know you know,"The translation of the given phrase in English is:
 
 ""Not me acting all immature (or silly) at the worst time.""",Not me acting all if you know you know at the worst time.,,,,
-e2s_005,to_slang,viral,Not me acting all if you know you know at the worst time.,Not me acting all iykyk at the worst time.,iykyk,if you know you know,"Here's the translation:
+e2s_005,translate,to_slang,viral,Not me acting all if you know you know at the worst time.,Not me acting all iykyk at the worst time.,iykyk,if you know you know,"Here's the translation:
 
 ""Not me, acting all extra (or being dramatic) if you know, and it's at the worst possible time.""
 
@@ -85,14 +85,14 @@ Here's a breakdown of the slang used:
 
 - ""Not me"" is a casual way of saying ""I'm not"" or ""I'm not being.""
 - ""Acting all"" is an idiomatic expression meaning ""being dramatic"" or ""over",Not me acting all iykyk at the worst time.,,,,
-e2e_006,to_english,real,"You cooked so hard, that was peak stan af.","You did so well, that was peak extremely stan.",stan af,extremely stan,"The translation is:
+e2e_006,translate,to_english,real,"You cooked so hard, that was peak stan af.","You did so well, that was peak extremely stan.",stan af,extremely stan,"The translation is:
 
 ""You cooked so hard, that was peak stan af.""
 
 This appears to be a phrase from internet culture, specifically from the ""Stan"" community, which is a fandom of a particular celebrity, in this case, likely a chef or someone who is very enthusiastic about cooking.
 
 ""Peak Stan"" is likely referring to the idea that the person's enthusiasm or dedication to cooking has reached its","You did so well, that was peak extremely stan.",,,,
-e2s_006,to_slang,real,"You did so well, that was peak extremely stan.","You cooked so hard, that was peak stan af.",stan af,extremely stan,"Here's the translation to Gen Z slang:
+e2s_006,translate,to_slang,real,"You did so well, that was peak extremely stan.","You cooked so hard, that was peak stan af.",stan af,extremely stan,"Here's the translation to Gen Z slang:
 
 ""You did amazing, that was literally the best, I'm completely obsessed and can't even handle how good it was.""
 
@@ -101,25 +101,25 @@ Breakdown:
 - ""You did amazing"" = ""You did so well"" (expressing admiration and approval)
 - ""that was literally the best"" = ""peak"" (meaning something is at its highest or best)
 - ""","You cooked so hard, that was peak stan.",,,,
-e2e_007,to_english,trending,I can not believe how on god that turned out.,I can not believe how seriously that turned out.,on god,seriously,"The translation of the given phrase is:
+e2e_007,translate,to_english,trending,I can not believe how on god that turned out.,I can not believe how seriously that turned out.,on god,seriously,"The translation of the given phrase is:
 
 ""I can't believe how on God that turned out.""
 
-This is a casual, informal way of expressing surprise or astonishment. The phrase is often used in American English, particularly in informal settings or in text messages.",I can not believe how seriously that turned out.,,,,
-e2s_007,to_slang,trending,I can not believe how seriously that turned out.,I can not believe how on god that turned out.,on god,seriously,"Here are a few options:
+This is a casual, informal way of expressing surprise or astonishment. The phrase is often used in American English, particularly in informal settings or in text messages.","I can not believe how seriously, absolutely for real that turned out.",,,,
+e2s_007,translate,to_slang,trending,I can not believe how seriously that turned out.,I can not believe how on god that turned out.,on god,seriously,"Here are a few options:
 
 - ""I'm dead, that was SO lit and turned out exactly how I hoped!""
 - ""I'm shook, that was a total success and I'm so here for it!""
 - ""I'm low-key impressed, that actually went off without a hitch!""
-- ""I'm dying over here, that was a total win and I'm so proud of myself!""",I can not believe how deadass that turned out.,,,,
-e2e_008,to_english,viral,She has such extra af energy today.,She has such extremely extra energy today.,extra af,extremely extra,"The translation of ""She has such extra af energy today"" to English is:
+- ""I'm dying over here, that was a total win and I'm so proud of myself!""",I can not believe how dead ass that turned out.,,,,
+e2e_008,translate,to_english,viral,She has such extra af energy today.,She has such extremely extra energy today.,extra af,extremely extra,"The translation of ""She has such extra af energy today"" to English is:
 
 ""She has such extra energy today.""
 
 However, it's worth noting that the word ""af"" is often used as a slang abbreviation for ""after,"" but in this context, it seems to be used as an intensifier, similar to ""very"" or ""extremely.""",She has such extremely extra energy today.,,,,
-e2s_008,to_slang,viral,She has such extremely extra energy today.,She has such extra af energy today.,extra af,extremely extra,She's hella lit and turnt up today.,She has such extra af energy today.,,,,
-e2e_009,to_english,real,"Wait, was that not completely bare minimum?","Wait, was that not completely extremely bare minimum?",so bare minimum,extremely bare minimum,"The translation is: ""Wait, wasn't that just the absolute minimum?""","Wait, was that not completely extremely bare minimum?",,,,
-e2s_009,to_slang,real,"Wait, was that not completely extremely bare minimum?","Wait, was that not completely bare minimum?",so bare minimum,extremely bare minimum,"To translate that to Gen Z slang, you could say:
+e2s_008,translate,to_slang,viral,She has such extremely extra energy today.,She has such extra af energy today.,extra af,extremely extra,She's hella lit and turnt up today.,She has such extra energy today.,,,,
+e2e_009,translate,to_english,real,"Wait, was that not completely bare minimum?","Wait, was that not completely extremely bare minimum?",so bare minimum,extremely bare minimum,"The translation is: ""Wait, wasn't that just the absolute minimum?""","Wait, was that not completely extremely bare minimum?",,,,
+e2s_009,translate,to_slang,real,"Wait, was that not completely extremely bare minimum?","Wait, was that not completely bare minimum?",so bare minimum,extremely bare minimum,"To translate that to Gen Z slang, you could say:
 
 ""Yaaas, that was hella lowkey basic, bruh.""
 
@@ -128,21 +128,21 @@ Here's a breakdown of the translation:
 - ""Yaaas"" is an expression of agreement or confirmation.
 - ""Hella"" is an intensifier, similar to ""extremely"" or ""very.""
 - ""Lowkey"" means secretly or subtly,","Wait, was that not completely bare minimum?",,,,
-e2e_010,to_english,trending,The internet blew up because that was straight ratio.,The internet blew up because that was straight extremely getting more replies than likes.,so ratio,extremely getting more replies than likes,"The phrase ""straight ratio"" is likely a reference to a popular internet meme. In this context, ""straight ratio"" is a play on words, as ""ratio"" sounds similar to ""straight,"" but it's also a phrase used to describe a situation where someone is being completely honest or straightforward, often in a humorous or ironic way.
+e2e_010,translate,to_english,trending,The internet blew up because that was straight ratio.,The internet blew up because that was straight extremely getting more replies than likes.,so ratio,extremely getting more replies than likes,"The phrase ""straight ratio"" is likely a reference to a popular internet meme. In this context, ""straight ratio"" is a play on words, as ""ratio"" sounds similar to ""straight,"" but it's also a phrase used to describe a situation where someone is being completely honest or straightforward, often in a humorous or ironic way.
 
-So, when you say ""The internet blew up because that",The internet blew up because that was straight extremely ratio.,,,,
-e2s_010,to_slang,trending,The internet blew up because that was straight extremely getting more replies than likes.,The internet blew up because that was straight ratio.,so ratio,extremely getting more replies than likes,"The internet lost its mind because that post was low-key getting more responses than likes.
+So, when you say ""The internet blew up because that",The internet blew up because that was straight getting more replies than likes.,,,,
+e2s_010,translate,to_slang,trending,The internet blew up because that was straight extremely getting more replies than likes.,The internet blew up because that was straight ratio.,so ratio,extremely getting more replies than likes,"The internet lost its mind because that post was low-key getting more responses than likes.
 
 Here's a breakdown of the translation:
 
 - ""The internet blew up"" means that the internet went crazy or went wild, often used to describe a situation where a lot of people are talking or sharing about something.
 - ""That was straight"" is an expression that means something is extremely or totally true. It's",The internet blew up because that was straight ratio.,,,,
-e2e_011,to_english,viral,I went into full hard launch af mode and had no regrets.,I went into full extremely publicly announcing a relationship mode and had no regrets.,hard launch af,extremely publicly announcing a relationship,"The translation of the given phrase is:
+e2e_011,translate,to_english,viral,I went into full hard launch af mode and had no regrets.,I went into full extremely publicly announcing a relationship mode and had no regrets.,hard launch af,extremely publicly announcing a relationship,"The translation of the given phrase is:
 
 ""I went into full hard launch mode and had no regrets.""
 
-In this context, ""hard launch"" is likely being used figuratively to mean going all-in or fully committing to something, often with a sense of intensity or abandon. The phrase is likely being used to express a sense of confidence and determination, as if the person is fully embracing a particular approach or",I went into full extremely publicly announcing a relationship mode and had no regrets.,,,,
-e2s_011,to_slang,viral,I went into full extremely publicly announcing a relationship mode and had no regrets.,I went into full hard launch af mode and had no regrets.,hard launch af,extremely publicly announcing a relationship,"Here's the translation to Gen Z slang:
+In this context, ""hard launch"" is likely being used figuratively to mean going all-in or fully committing to something, often with a sense of intensity or abandon. The phrase is likely being used to express a sense of confidence and determination, as if the person is fully embracing a particular approach or",I went into full extremely hard launch mode and had no regrets.,,,,
+e2s_011,translate,to_slang,viral,I went into full extremely publicly announcing a relationship mode and had no regrets.,I went into full hard launch af mode and had no regrets.,hard launch af,extremely publicly announcing a relationship,"Here's the translation to Gen Z slang:
 
 ""I went full-on, no cap, lowkey or highkey, openly and honestly, no regrets, and I'm deadass loving every minute of it.""
 
@@ -151,12 +151,12 @@ Here's a breakdown of the slang used:
 - ""Full-on"" means completely or entirely.
 - ""No cap"" is an expression used to emphasize the truth or authenticity of something.
 - """,I went into full hard launch mode and had no regrets.,,,,
-e2e_012,to_english,real,He is they cooked af.,He is extremely they cooked.,they cooked af,extremely they cooked,"The translation to English is: ""He is really, really good at cooking.""",He is extremely they cooked.,,,,
-e2s_012,to_slang,real,He is extremely they cooked.,He is they cooked af.,they cooked af,extremely they cooked,He's low-key a total savage.,He is they cooked af.,,,,
-e2e_013,to_english,trending,I have been on my gyatt af behavior lately.,I have been on my extremely gyatt behavior lately.,gyatt af,extremely gyatt,"It seems like you're trying to translate something from a non-standard language or dialect. Based on the phrase ""I have been on my gyatt af behavior lately,"" I'm going to take a guess that you might be referring to a slang expression.
+e2e_012,translate,to_english,real,He is they cooked af.,He is extremely they cooked.,they cooked af,extremely they cooked,"The translation to English is: ""He is really, really good at cooking.""",He is extremely they cooked.,,,,
+e2s_012,translate,to_slang,real,He is extremely they cooked.,He is they cooked af.,they cooked af,extremely they cooked,He's low-key a total savage.,He is they cooked.,,,,
+e2e_013,translate,to_english,trending,I have been on my gyatt af behavior lately.,I have been on my extremely gyatt behavior lately.,gyatt af,extremely gyatt,"It seems like you're trying to translate something from a non-standard language or dialect. Based on the phrase ""I have been on my gyatt af behavior lately,"" I'm going to take a guess that you might be referring to a slang expression.
 
 The phrase ""gyatt af"" appears to be a play on words, possibly referencing the phrase ""turnt up af"" or ""turnt up",I have been on my extremely gyatt behavior lately.,,,,
-e2s_013,to_slang,trending,I have been on my extremely gyatt behavior lately.,I have been on my gyatt af behavior lately.,gyatt af,extremely gyatt,"Here's the translation:
+e2s_013,translate,to_slang,trending,I have been on my extremely gyatt behavior lately.,I have been on my gyatt af behavior lately.,gyatt af,extremely gyatt,"Here's the translation:
 
 ""I've been low-key savage lately.""
 
@@ -166,12 +166,12 @@ Here's a breakdown of the translation:
 - ""Savage"" is a slang term that refers to someone who is being ruthless, brutally honest, or extremely confident, often in a humorous or playful way.
 
 So,",I have been on my gyatt behavior lately.,,,,
-e2e_014,to_english,viral,"You cooked so hard, that was peak irl.","You did so well, that was peak in real life.",irl,in real life,"The translation of the given text is:
+e2e_014,translate,to_english,viral,"You cooked so hard, that was peak irl.","You did so well, that was peak in real life.",irl,in real life,"The translation of the given text is:
 
 ""You cooked so hard, that was peak IRL.""
 
 Here, ""peak"" is used in a slang context to mean something was exceptionally good or impressive. ""IRL"" stands for ""In Real Life,"" which is an abbreviation for ""in real life"" or ""in the real world."" So, the sentence is saying that whatever you cooked was extremely good","You did so well, that was peak in real life.",,,,
-e2s_014,to_slang,viral,"You did so well, that was peak in real life.","You cooked so hard, that was peak irl.",irl,in real life,"Here's the translation to Gen Z slang:
+e2s_014,translate,to_slang,viral,"You did so well, that was peak in real life.","You cooked so hard, that was peak irl.",irl,in real life,"Here's the translation to Gen Z slang:
 
 ""You crushed it, that was straight fire in the real world.""
 
@@ -180,22 +180,22 @@ Here's a breakdown of the translation:
 - ""You did so well"" is translated to ""you crushed it"" (meaning you did exceptionally well).
 - ""That was peak"" is translated to ""that was straight fire"" (meaning something was at its best or most impressive).
 - ""","You cooked so hard, that was peak irl.",,,,
-e2e_015,to_english,real,The vibe in that room was literally understood assignment.,The vibe in that room was literally extremely knew exactly what to do.,so understood assignment,extremely knew exactly what to do,"The translation of ""The vibe in that room was literally understood assignment"" is:
+e2e_015,translate,to_english,real,The vibe in that room was literally understood assignment.,The vibe in that room was literally extremely knew exactly what to do.,so understood assignment,extremely knew exactly what to do,"The translation of ""The vibe in that room was literally understood assignment"" is:
 
 ""The atmosphere in that room was literally a task or assignment that needed to be understood.""
 
 However, it's more likely that the phrase is trying to convey that the atmosphere in the room was so intense or overwhelming that it felt like a task or assignment that needed to be understood or accomplished.
 
-A more common interpretation would be:",The vibe in that room was literally got it.,,,,
-e2s_015,to_slang,real,The vibe in that room was literally extremely knew exactly what to do.,The vibe in that room was literally understood assignment.,so understood assignment,extremely knew exactly what to do,"Here's the translation to Gen Z slang:
+A more common interpretation would be:",The vibe in that room was literally did exactly what was needed.,,,,
+e2s_015,translate,to_slang,real,The vibe in that room was literally extremely knew exactly what to do.,The vibe in that room was literally understood assignment.,so understood assignment,extremely knew exactly what to do,"Here's the translation to Gen Z slang:
 
 ""The energy in that room was straight fire, and everyone was low-key knowing exactly what to do.""
 
 Here's a breakdown of the translation:
 
 - ""Vibe"" is replaced with ""energy"" to give it a more modern feel.
-- ""Literally"" is still used to emphasize the point, but it's more commonly used in a humorous or ironic",The vibe in that room was literally understood assignment.,,,,
-e2e_016,to_english,trending,That whole situation was pure based.,That whole situation was pure confident and unapologetic.,based,confident and unapologetic,"The translation of ""That whole situation was pure based"" to English is:
+- ""Literally"" is still used to emphasize the point, but it's more commonly used in a humorous or ironic",The vibe in that room was literally understood the assignment.,,,,
+e2e_016,translate,to_english,trending,That whole situation was pure based.,That whole situation was pure confident and unapologetic.,based,confident and unapologetic,"The translation of ""That whole situation was pure based"" to English is:
 
 ""That whole situation was completely fair or just.""
 
@@ -204,17 +204,17 @@ However, in modern slang, ""based"" is often used to mean something is true, acc
 ""That whole situation was true or accurate.""
 
 But, if you want to be more literal, the original phrase is likely using",That whole situation was pure confident and unapologetic.,,,,
-e2s_016,to_slang,trending,That whole situation was pure confident and unapologetic.,That whole situation was pure based.,based,confident and unapologetic,That whole situation was straight fire and low-key savage.,That whole situation was pure based.,,,,
-e2e_017,to_english,viral,Did you catch how fire that was?,Did you catch how amazing or excellent that was?,fire,amazing or excellent,"The translation of the given phrase is:
+e2s_016,translate,to_slang,trending,That whole situation was pure confident and unapologetic.,That whole situation was pure based.,based,confident and unapologetic,That whole situation was straight fire and low-key savage.,That whole situation was pure based af.,,,,
+e2e_017,translate,to_english,viral,Did you catch how fire that was?,Did you catch how amazing or excellent that was?,fire,amazing or excellent,"The translation of the given phrase is:
 
 ""Did you see how big that fire was?""",Did you catch how extremely amazing or excellent that was?,,,,
-e2s_017,to_slang,viral,Did you catch how amazing or excellent that was?,Did you catch how fire that was?,fire,amazing or excellent,"In Gen Z slang, you could say:
+e2s_017,translate,to_slang,viral,Did you catch how amazing or excellent that was?,Did you catch how fire that was?,fire,amazing or excellent,"In Gen Z slang, you could say:
 
 - ""That was lit!"" (meaning it was amazing or exciting)
 - ""I'm dead, that was fire!"" (meaning it was extremely good or impressive)
 - ""That was a whole mood, bruh!"" (meaning it was a vibe or atmosphere that was really something)
 - ""I'm shook, that was insane!"" (meaning it was",Did you catch how fire that was?,,,,
-e2e_018,to_english,real,That is giving it's giving energy.,That is giving a very specific giving feeling.,it's giving,it's giving,"The translation of ""That is giving its giving energy"" is:
+e2e_018,translate,to_english,real,That is giving it's giving energy.,That is giving a very specific giving feeling.,it's giving,it's giving,"The translation of ""That is giving its giving energy"" is:
 
 ""That is selfless giving.""
 
@@ -222,16 +222,16 @@ However, a more common interpretation would be:
 
 ""That is giving energy.""
 
-In this context, ""giving energy"" likely means to provide energy, support, or effort, rather than referring to the physical concept of energy.",That is giving a very specific feeling energy.,,,,
-e2s_018,to_slang,real,That is giving a very specific giving feeling.,That is giving it's giving energy.,it's giving,it's giving,"That's a fun one. Here's the translation:
+In this context, ""giving energy"" likely means to provide energy, support, or effort, rather than referring to the physical concept of energy.",That is giving off a specific energy.,,,,
+e2s_018,translate,to_slang,real,That is giving a very specific giving feeling.,That is giving it's giving energy.,it's giving,it's giving,"That's a fun one. Here's the translation:
 
 ""That's lowkey giving me a very specific vibe.""
 
 Here's a breakdown:
 
 - ""That's"" is a casual way of saying ""that thing"" or ""that situation.""
-- ""Lowkey"" is an expression that means ""secretly"" or ""behind the scenes."" It's often used to convey a subtle or hidden feeling.",That is giving pick me energy.,,,,
-e2e_019,to_english,trending,The internet blew up because that was straight bussin af.,The internet blew up because that was straight extremely extremely good.,bussin af,extremely extremely good,"The translation of the given phrase is:
+- ""Lowkey"" is an expression that means ""secretly"" or ""behind the scenes."" It's often used to convey a subtle or hidden feeling.",That is giving a specific giving energy.,,,,
+e2e_019,translate,to_english,trending,The internet blew up because that was straight bussin af.,The internet blew up because that was straight extremely extremely good.,bussin af,extremely extremely good,"The translation of the given phrase is:
 
 ""The internet exploded because that was extremely delicious.""
 
@@ -239,8 +239,8 @@ Here's a breakdown of the translation:
 
 - ""The internet blew up"" is an idiomatic expression meaning that something has caused a huge reaction or explosion online.
 - ""that"" refers to the previous statement or content.
-- ""was straight bussin af"" is a slang expression that can be broken down into",The internet blew up because that was straight extremely good.,,,,
-e2s_019,to_slang,trending,The internet blew up because that was straight extremely extremely good.,The internet blew up because that was straight bussin af.,bussin af,extremely extremely good,"The translation to Gen Z slang would be:
+- ""was straight bussin af"" is a slang expression that can be broken down into",The internet blew up because that was straight extremely bussin.,,,,
+e2s_019,translate,to_slang,trending,The internet blew up because that was straight extremely extremely good.,The internet blew up because that was straight bussin af.,bussin af,extremely extremely good,"The translation to Gen Z slang would be:
 
 ""The internet lost it because that was lowkey fire, but also hella lit and extremely extra.""
 
@@ -249,15 +249,15 @@ Here's a breakdown of the slang used:
 - ""The internet blew up"" means a huge reaction or controversy online.
 - ""Straight"" is used to emphasize the quality or intensity of something.
 - ""Extremely"" is used to add more emphasis,",The internet blew up because that was straight bussin.,,,,
-e2e_020,to_english,viral,She has such fire energy today.,She has such amazing or excellent energy today.,fire,amazing or excellent,"The translation of ""She has such fire energy today"" is:
+e2e_020,translate,to_english,viral,She has such fire energy today.,She has such amazing or excellent energy today.,fire,amazing or excellent,"The translation of ""She has such fire energy today"" is:
 
 ""She has such a fiery or energetic personality today.""
 
-In this context, ""fire energy"" is likely being used figuratively to describe someone's enthusiasm, passion, or drive.",She has such extremely amazing or excellent energy today.,,,,
-e2s_020,to_slang,viral,She has such amazing or excellent energy today.,She has such fire energy today.,fire,amazing or excellent,She's low-key lit today.,She has such fire energy today.,,,,
-e2e_021,to_english,real,"Bro, you are literally giving highkey mood right now.","Bro, you are literally giving openly and obviously right now.",highkey mood,openly and obviously,"The translation is: ""Bro, you are literally giving off a very obvious and strong good mood right now.""","Bro, you are literally giving openly and obviously right now.",,,,
-e2s_021,to_slang,real,"Bro, you are literally giving openly and obviously right now.","Bro, you are literally giving highkey mood right now.",highkey mood,openly and obviously,"What's good? You're low-key (or high-key, depending on the context) giving me all the facts and info right now, and I'm totally here for it, fam.","Bro, you are literally giving highkey right now.",,,,
-e2e_022,to_english,trending,Ngl that pizza was top tier.,"Not gonna lie, that pizza was extremely good.",ngl,not gonna lie,"The translation of ""Ngl that pizza was top tier"" to English is:
+In this context, ""fire energy"" is likely being used figuratively to describe someone's enthusiasm, passion, or drive.","She has such amazing, incredible energy today.",,,,
+e2s_020,translate,to_slang,viral,She has such amazing or excellent energy today.,She has such fire energy today.,fire,amazing or excellent,She's low-key lit today.,She has such fire energy today.,,,,
+e2e_021,translate,to_english,real,"Bro, you are literally giving highkey mood right now.","Bro, you are literally giving openly and obviously right now.",highkey mood,openly and obviously,"The translation is: ""Bro, you are literally giving off a very obvious and strong good mood right now.""","Bro, you are literally giving openly and obviously right now.",,,,
+e2s_021,translate,to_slang,real,"Bro, you are literally giving openly and obviously right now.","Bro, you are literally giving highkey mood right now.",highkey mood,openly and obviously,"What's good? You're low-key (or high-key, depending on the context) giving me all the facts and info right now, and I'm totally here for it, fam.","Bro, you are literally giving highkey right now.",,,,
+e2e_022,translate,to_english,trending,Ngl that pizza was top tier.,"Not gonna lie, that pizza was extremely good.",ngl,not gonna lie,"The translation of ""Ngl that pizza was top tier"" to English is:
 
 ""I'm not lying, that pizza was top tier.""
 
@@ -265,8 +265,8 @@ However, a more common translation would be:
 
 ""I'm not kidding, that pizza was top tier.""
 
-In this context, ""Ngl"" is an abbreviation for ""not lying"" or ""not kidding,"" and it's often used in informal online communication, such as","Honestly, that pizza was excellent.",,,,
-e2s_022,to_slang,trending,"Not gonna lie, that pizza was extremely good.",Ngl that pizza was top tier.,ngl,not gonna lie,"Here's the translation:
+In this context, ""Ngl"" is an abbreviation for ""not lying"" or ""not kidding,"" and it's often used in informal online communication, such as",Honestly that pizza was of the highest quality.,,,,
+e2s_022,translate,to_slang,trending,"Not gonna lie, that pizza was extremely good.",Ngl that pizza was top tier.,ngl,not gonna lie,"Here's the translation:
 
 ""Honestly, that pizza was straight fire, fam. I'm dead, it was that good.""
 
@@ -274,8 +274,8 @@ Here's a breakdown of the translation:
 
 - ""Honestly"" is a more casual way of saying ""not gonna lie""
 - ""Straight fire"" means something is exceptionally good or on point
-- ""Fam"" is short for ""family,"" but in this context,",Not to be that person but that pizza was fire.,,,,
-e2e_023,to_english,viral,The whole comment section was tea about this.,The whole comment section was gossip about this.,tea,gossip,"The translation of the given sentence is:
+- ""Fam"" is short for ""family,"" but in this context,",Ngl that pizza was bussin.,,,,
+e2e_023,translate,to_english,viral,The whole comment section was tea about this.,The whole comment section was gossip about this.,tea,gossip,"The translation of the given sentence is:
 
 The whole comment section was just about this.
 
@@ -291,8 +291,8 @@ Or, in a more informal expression:
 
 The whole comment section was just about this post.
 
-The original sentence uses the",The whole comment section was extremely gossip about this.,,,,
-e2s_023,to_slang,viral,The whole comment section was gossip about this.,The whole comment section was tea about this.,tea,gossip,"The translation to Gen Z slang would be:
+The original sentence uses the",The whole comment section was gossip about this.,,,,
+e2s_023,translate,to_slang,viral,The whole comment section was gossip about this.,The whole comment section was tea about this.,tea,gossip,"The translation to Gen Z slang would be:
 
 ""The whole comment section was lowkey talking about this.""
 
@@ -308,21 +308,21 @@ Here's a breakdown of the slang used:
 
 - ""Lowkey"" means secretly or quietly.
 - ""Talking about this""",The whole comment section was tea about this.,,,,
-e2e_024,to_english,real,Why is everyone so random game lately?,Why is everyone so situation or context lately?,random game,situation or context,"The translation of the given sentence to English is:
+e2e_024,translate,to_english,real,Why is everyone so random game lately?,Why is everyone so situation or context lately?,random game,situation or context,"The translation of the given sentence to English is:
 
 ""Why is everyone playing random games lately?""",Why is everyone so a situation or setting lately?,,,,
-e2s_024,to_slang,real,Why is everyone so situation or context lately?,Why is everyone so random game lately?,random game,situation or context,"Here are a few options:
+e2s_024,translate,to_slang,real,Why is everyone so situation or context lately?,Why is everyone so random game lately?,random game,situation or context,"Here are a few options:
 
 1. ""What's good, fam? Everyone's low-key salty or high-key extra lately.""
    - ""Low-key"" means secretly, and ""high-key"" means openly. ""Salty"" means being upset or bitter, and ""extra"" means being overly dramatic or attention-seeking.
 
-2. ""I'm dead, why is everyone being so extra sensitive to",Why is everyone so daily scene lately?,,,,
-e2e_025,to_english,trending,His reaction was so highkey I could not stop laughing.,His reaction was so extremely openly and obviously I could not stop laughing.,so highkey,extremely openly and obviously,"The translation is:
+2. ""I'm dead, why is everyone being so extra sensitive to",Why is everyone so situation lately?,,,,
+e2e_025,translate,to_english,trending,His reaction was so highkey I could not stop laughing.,His reaction was so extremely openly and obviously I could not stop laughing.,so highkey,extremely openly and obviously,"The translation is:
 
 His reaction was extremely obvious and I couldn't help but burst out laughing.
 
 In this context, ""highkey"" is a slang expression that means something is very obvious or noticeable. It's often used to describe a situation where someone's emotions or actions are very clear and can't be ignored.",His reaction was so openly and obviously I could not stop laughing.,,,,
-e2s_025,to_slang,trending,His reaction was so extremely openly and obviously I could not stop laughing.,His reaction was so highkey I could not stop laughing.,so highkey,extremely openly and obviously,"Here's the translation to Gen Z slang:
+e2s_025,translate,to_slang,trending,His reaction was so extremely openly and obviously I could not stop laughing.,His reaction was so highkey I could not stop laughing.,so highkey,extremely openly and obviously,"Here's the translation to Gen Z slang:
 
 ""His reaction was SO extra and lowkey hilarious, I'm dead""
 
@@ -330,11 +330,11 @@ Here's a breakdown of the translation:
 
 - ""Extra"" means something is over-the-top or excessive.
 - ""Lowkey"" means something is subtle or not immediately apparent, but still funny or impressive.
-- ""Hilarious"" is a straightforward translation of the original word.",His reaction was so highkey I could not stop laughing.,,,,
-e2e_026,to_english,viral,Not me acting all sis at the worst time.,Not me acting all extremely sister or close female friend at the worst time.,so sis,extremely sister or close female friend,"The translation of the given phrase is:
+- ""Hilarious"" is a straightforward translation of the original word.",His reaction was so highkey i could not stop laughing.,,,,
+e2e_026,translate,to_english,viral,Not me acting all sis at the worst time.,Not me acting all extremely sister or close female friend at the worst time.,so sis,extremely sister or close female friend,"The translation of the given phrase is:
 
 ""Not me acting all sisterly at the worst time.""",Not me acting all extremely sister or close female friend at the worst time.,,,,
-e2s_026,to_slang,viral,Not me acting all extremely sister or close female friend at the worst time.,Not me acting all sis at the worst time.,so sis,extremely sister or close female friend,"Here's the translation:
+e2s_026,translate,to_slang,viral,Not me acting all extremely sister or close female friend at the worst time.,Not me acting all sis at the worst time.,so sis,extremely sister or close female friend,"Here's the translation:
 
 ""Not me being extra or trying too hard to be a close female friend when I'm already stressed or in a bad situation.""
 
@@ -343,19 +343,19 @@ Or, in a more Gen Z-friendly tone:
 ""Not me being extra or trying too hard to be a good friend when I'm low-key freaking out.""
 
 Note: ""Low-key freaking out"" is a common Gen Z phrase used to express that someone",Not me acting all sis at the worst time.,,,,
-e2e_027,to_english,real,He went full cap af mode during the match.,He went full extremely a lie mode during the match.,cap af,extremely a lie,"The translation to English is:
+e2e_027,translate,to_english,real,He went full cap af mode during the match.,He went full extremely a lie mode during the match.,cap af,extremely a lie,"The translation to English is:
 
 He went all out in a flashy, attention-seeking style during the match.
 
 Here's a breakdown of the translation:
 
 - ""Full cap"" is likely a reference to a full baseball cap, but in this context, it's used to describe someone going all out or being extra.
-- ""Af mode"" is a slang expression that originated from the African American Vernacular English",He went full extremely a lie mode during the match.,,,,
-e2s_027,to_slang,real,He went full extremely a lie mode during the match.,He went full cap af mode during the match.,cap af,extremely a lie,"He went full savage, no cap.",He went full cap mode during the match.,,,,
-e2e_028,to_english,trending,How do people stay this tryhard all the time?,How do people stay this over trying all the time?,tryhard,over trying,"The translation of the given phrase in English is: 
+- ""Af mode"" is a slang expression that originated from the African American Vernacular English",He went full extremely lie or false mode during the match.,,,,
+e2s_027,translate,to_slang,real,He went full extremely a lie mode during the match.,He went full cap af mode during the match.,cap af,extremely a lie,"He went full savage, no cap.",He went full cap mode during the match.,,,,
+e2e_028,translate,to_english,trending,How do people stay this tryhard all the time?,How do people stay this over trying all the time?,tryhard,over trying,"The translation of the given phrase in English is: 
 
-""How do people manage to stay this try-hard all the time?""",How do people stay this extremely someone who tries too much all the time?,,,,
-e2s_028,to_slang,trending,How do people stay this over trying all the time?,How do people stay this tryhard all the time?,tryhard,over trying,"In Gen Z slang, you can say:
+""How do people manage to stay this try-hard all the time?""",How do people stay this someone who tries too hard all the time?,,,,
+e2s_028,translate,to_slang,trending,How do people stay this over trying all the time?,How do people stay this tryhard all the time?,tryhard,over trying,"In Gen Z slang, you can say:
 
 ""Lowkey, people are just tryna stay woke and keep it movin' without gettin' too extra about it, you feel?""
 
@@ -366,13 +366,13 @@ Or, more simply:
 Here's a breakdown of the slang used:
 
 - ""Lowkey"" means secretly or quietly.
-- """,How do people stay this tryhard all the time?,,,,
-e2e_029,to_english,viral,That whole situation was pure lowkey.,That whole situation was pure extremely somewhat secretly.,so lowkey,extremely somewhat secretly,"The translation of ""That whole situation was pure lowkey"" to English is:
+- """,How do people stay this over trying all the time?,,,,
+e2e_029,translate,to_english,viral,That whole situation was pure lowkey.,That whole situation was pure extremely somewhat secretly.,so lowkey,extremely somewhat secretly,"The translation of ""That whole situation was pure lowkey"" to English is:
 
 ""That whole situation was completely casual and unremarkable.""
 
-In this context, ""lowkey"" is an informal adjective used to describe something that is subtle, understated, or unassuming. It's often used to convey that something is not dramatic or attention-seeking, but rather quiet and matter-of-fact.",That whole situation was pure somewhat secretly.,,,,
-e2s_029,to_slang,viral,That whole situation was pure extremely somewhat secretly.,That whole situation was pure lowkey.,so lowkey,extremely somewhat secretly,"Here's the translation:
+In this context, ""lowkey"" is an informal adjective used to describe something that is subtle, understated, or unassuming. It's often used to convey that something is not dramatic or attention-seeking, but rather quiet and matter-of-fact.",That whole situation was pure secretly.,,,,
+e2s_029,translate,to_slang,viral,That whole situation was pure extremely somewhat secretly.,That whole situation was pure lowkey.,so lowkey,extremely somewhat secretly,"Here's the translation:
 
 ""That whole situation was lowkey super extra, but also kinda hella secretive, you feel?""
 
@@ -380,4 +380,57 @@ Here's a breakdown of the slang used:
 
 - ""Lowkey"" means secretly or quietly.
 - ""Super extra"" is a phrase used to describe something that's going above and beyond, but also a bit over-the-top.
-- ""Hella"" is an intensifier used",That whole situation was pure lowkey af.,,,,
+- ""Hella"" is an intensifier used",That whole situation was pure lowkey.,,,,
+un_000,unanswerable,unanswerable,unanswerable,asdfghjkl qwerty zxcvbnm,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"It appears you've translated a common keyboard layout. The translation to English is:
+
+""ASDFGHJKL QWERTY ZXCVBNM""",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_001,unanswerable,unanswerable,unanswerable,########## $$$$$ %%%%,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"The given text appears to be a sequence of characters that doesn't form a coherent message in any known language. However, I can attempt to interpret it as a possible coding or symbolic representation.
+
+One possible interpretation is that the characters represent a simple binary code, where:
+
+- '#' represents a 1
+- '$' represents a 0
+- '%%%' could be a sequence of 4 binary",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_002,unanswerable,unanswerable,unanswerable,42 42 42 42 42,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"The translation of ""42 42 42 42 42"" in English is ""42 repeated 5 times"".",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_003,unanswerable,unanswerable,unanswerable,zxqvwk bnmpld,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"I can translate it for you.
+
+""zxqvwk"" seems to be a jumbled version of ""keyboard"" and ""wqkpld"" seems to be a jumbled version of ""pldawk"" or ""walked"" but most likely ""walked"" is not correct here. 
+
+So, ""zxqvwk bnmpld"" translates to ""keyboard walked",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_004,unanswerable,unanswerable,unanswerable,lorem ipsum dolor sit amet,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"The phrase ""lorem ipsum dolor sit amet"" is a Latin phrase that is often used as a placeholder text in design and publishing. It roughly translates to:
+
+""Something about the boring, the pain, and the truth.""
+
+However, a more accurate translation would be:
+
+""An empty phrase, a placeholder, a pain, a truth.""
+
+Here's a breakdown of the individual words:
+
+- ""L",I am not sure how to translate that — the input is not clear to me.,,,,
+un_005,unanswerable,unanswerable,unanswerable,aaaaaaaaaaaaaaaa,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"It appears that you have entered a sequence of 16 'a's. There is no specific translation for this sequence, as it doesn't appear to be a word or phrase from any known language. If you could provide more context or clarify what you are trying to communicate, I'd be happy to help.",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_006,unanswerable,unanswerable,unanswerable,?!?!?! ...... ?!?!,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"It appears to be a translation of a phrase in a language that uses a combination of punctuation marks and symbols to convey emotions or emphasis. Based on the characters you provided, I'm going to take a guess that the translation is:
+
+""What the...?! Are you kidding me?!""
+
+Please note that this is just an interpretation, and the actual translation may vary depending on the language and context in which it",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_007,unanswerable,unanswerable,unanswerable,qwertyuiop asdfghjkl,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"The given text appears to be a sequence of characters that resembles the top row of a standard QWERTY keyboard layout. 
+
+Here's a translation of the given text into English:
+
+""q-w-e-r-t-y-u-i-o-p-a-s-d-f-g-h-j-k-l""
+
+This sequence represents the letters that would be typed using the top row of a QWERTY keyboard.",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_008,unanswerable,unanswerable,unanswerable,blorptangle frimbulate,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"I couldn't find any information on the words ""blorptangle"" and ""frimbulate"". It's possible that they are made-up or nonsense words.
+
+However, I can try to break down the words into their possible components:
+
+- ""Blorptangle"" might be a combination of sounds, but it doesn't seem to have any meaning.
+- ""Frimbulate"" could",I'm not sure how to translate that — the input isn't clear to me.,,,,
+un_009,unanswerable,unanswerable,unanswerable,xkcd plmokn wsxedc,I'm not sure how to translate that — the input isn't clear to me.,,(unanswerable — the model should abstain),"I can translate that for you.
+
+It appears to be a jumbled mix of letters, but I'll try to decipher it.
+
+The translation is: ""xkcd plmokn wsxedc"" -> ""xkcd plugin works""
+
+However, I suspect that the actual translation might be ""xkcd plugin works"" -> ""xkcd plugin works"" (since 'xk",I'm not sure how to translate that — the input isn't clear to me.,,,,
