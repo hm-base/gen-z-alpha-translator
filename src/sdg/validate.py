@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import sys
 from collections import Counter
 
@@ -33,7 +34,7 @@ def check_row(row: dict, banned: set) -> str | None:
         return "eval-leak"
     if not row.get("is_hard_negative"):
         term = str(row.get("term", "")).strip().lower()
-        if term and term not in low_s:
+        if term and not re.search(r"\b" + re.escape(term) + r"\b", low_s):
             return "term-missing"
     return None
 
@@ -62,6 +63,7 @@ def main(argv=None) -> int:
     banned = banned_from_eval(eval_items)
 
     rows = [json.loads(l) for l in open(RAW_IN, encoding="utf-8")]
+    rows = [r for r in rows if not r.get("_failed")]
     kept, reasons = [], Counter()
     for r in rows:
         why = check_row(r, banned)

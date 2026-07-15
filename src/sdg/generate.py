@@ -87,10 +87,13 @@ def main(argv=None) -> int:
     print(f"{args.limit} target | {already} already generated | generating {len(recipes)}")
     with open(RAW_OUT, "a", encoding="utf-8") as f:
         for i, r in enumerate(recipes, 1):
-            rec = generate_one(client, r)
-            if rec:
-                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-                f.flush()
+            try:
+                rec = generate_one(client, r)
+            except Exception as e:  # transient API error (429/timeout/5xx): skip, keep going
+                print(f"  skip (api error): {e}")
+                rec = None
+            f.write(json.dumps(rec or {"_failed": True}, ensure_ascii=False) + "\n")
+            f.flush()
             time.sleep(0.25)
             if i % 50 == 0:
                 print(f"  {i}/{len(recipes)} ...")

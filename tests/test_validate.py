@@ -37,6 +37,15 @@ def test_eval_leak_rejected():
     assert check_row(r, BANNED) == "eval-leak"
 
 
+def test_short_term_word_boundary():
+    # substring "fr" appears inside "friend" -> must still be term-missing
+    assert check_row(ok_row(term="fr", slang="my friend came over today"),
+                     BANNED) == "term-missing"
+    # standalone "fr" is present -> passes
+    assert check_row(ok_row(term="fr", slang="that was fr the best"),
+                     BANNED) is None
+
+
 def test_dedupe():
     rows = [ok_row(), ok_row(), ok_row(slang="different one", term="fr")]
     assert len(dedupe_rows(rows)) == 2

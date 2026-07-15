@@ -6,11 +6,10 @@ from __future__ import annotations
 import random
 from dataclasses import dataclass
 
-import pandas as pd
-
-from config import (DICT_DIR, DICT_SOURCES, RANDOM_SEED, SDG_CONTEXTS,
+from config import (RANDOM_SEED, SDG_CONTEXTS,
                     SDG_DIFFICULTY_WEIGHTS, SDG_DIRECTION_WEIGHTS,
                     SDG_HARD_NEG_FRAC, SDG_TONES)
+from slang_terms import load_dict_terms
 
 
 @dataclass
@@ -24,17 +23,7 @@ class Recipe:
 
 
 def load_term_pool() -> list[str]:
-    terms: set[str] = set()
-    for src in DICT_SOURCES:
-        if src.get("emoji"):
-            continue
-        p = DICT_DIR / src["file"]
-        if not p.exists():
-            continue
-        df = pd.read_csv(p)
-        if src["term_col"] in df.columns:
-            terms |= {str(t).strip() for t in df[src["term_col"]].dropna()}
-    return sorted({t for t in terms if t and 1 <= len(t) <= 40})
+    return load_dict_terms()
 
 
 def _weighted(rng: random.Random, pairs: list[tuple[str, float]]) -> str:

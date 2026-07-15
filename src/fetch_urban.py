@@ -24,6 +24,7 @@ import pandas as pd
 import requests
 
 from config import DICT_DIR, DICT_SOURCES, RAW_DIR, SOURCES
+from slang_terms import load_dict_terms
 
 OUT = DICT_DIR / "urban_slang.csv"
 API = "https://api.urbandictionary.com/v0/define"
@@ -31,15 +32,7 @@ API = "https://api.urbandictionary.com/v0/define"
 
 def collect_terms() -> list[str]:
     """Unique slang terms from the dictionaries + the datasets' term columns."""
-    terms: set[str] = set()
-    for src in DICT_SOURCES:
-        if src.get("emoji") or src["file"] == "urban_slang.csv":
-            continue
-        p = DICT_DIR / src["file"]
-        if p.exists():
-            df = pd.read_csv(p)
-            if src["term_col"] in df.columns:
-                terms |= {str(t).strip() for t in df[src["term_col"]].dropna()}
+    terms = set(load_dict_terms())
     for src in SOURCES:
         if src.get("term_col"):
             p = RAW_DIR / src["file"]

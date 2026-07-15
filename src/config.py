@@ -58,6 +58,7 @@ SOURCES = [
         "file": "synthetic_slang.csv",
         "slang_col": "slang_sentence",
         "english_col": "normal_sentence",
+        "hardneg_col": "is_hard_negative",
         # metadata columns (slang_term/tone/difficulty/is_hard_negative) are ignored
         # by load_source; kept in the CSV for provenance.
     },

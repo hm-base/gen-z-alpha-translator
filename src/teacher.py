@@ -36,7 +36,10 @@ def chat(client: OpenAI, prompt: str, *, system: str = "",
         model=_default_model(),
         messages=messages, temperature=temperature, max_tokens=max_tokens,
     )
-    return (resp.choices[0].message.content or "").strip()
+    msg = resp.choices[0].message
+    content = (msg.content or "").strip()
+    reasoning = (getattr(msg, "reasoning_content", None) or "").strip()
+    return content or reasoning
 
 
 def _default_model() -> str:
@@ -51,10 +54,22 @@ def extract_json(text: str) -> dict | None:
         if text[start] != "{":
             continue
         depth = 0
+        in_str = False
+        esc = False
         for end in range(start, len(text)):
-            if text[end] == "{":
+            c = text[end]
+            if in_str:
+                if esc:
+                    esc = False
+                elif c == "\\":
+                    esc = True
+                elif c == '"':
+                    in_str = False
+            elif c == '"':
+                in_str = True
+            elif c == "{":
                 depth += 1
-            elif text[end] == "}":
+            elif c == "}":
                 depth -= 1
                 if depth == 0:
                     try:

@@ -12,34 +12,14 @@ from __future__ import annotations
 import json
 import sys
 
-import pandas as pd
-
-from config import DICT_DIR, DICT_SOURCES, EVAL_PATH
+from config import EVAL_PATH
 from teacher import chat, extract_json, get_client
 
 
 def build_glossary(max_terms: int = 40) -> str:
-    terms: list[tuple[str, str]] = []
-    seen = set()
-    for src in DICT_SOURCES:
-        if src.get("emoji"):
-            continue
-        p = DICT_DIR / src["file"]
-        if not p.exists():
-            continue
-        df = pd.read_csv(p)
-        if src["term_col"] not in df.columns or src["meaning_col"] not in df.columns:
-            continue
-        for _, row in df.iterrows():
-            t = str(row.get(src["term_col"], "")).strip()
-            m = str(row.get(src["meaning_col"], "")).strip()
-            if not t or not m or t.lower() in seen:
-                continue
-            seen.add(t.lower())
-            terms.append((t, m))
-            if len(terms) >= max_terms:
-                return "\n".join(f"{t} = {m}" for t, m in terms)
-    return "\n".join(f"{t} = {m}" for t, m in terms)
+    from slang_terms import load_dict_pairs
+    pairs = load_dict_pairs()[:max_terms]
+    return "\n".join(f"{t} = {m}" for t, m in pairs)
 
 
 def judge_translation(client, direction: str, source: str, reference: str,
@@ -52,7 +32,7 @@ def judge_translation(client, direction: str, source: str, reference: str,
         "Is the candidate correct IN MEANING (wording may differ)? "
         "Reply with ONLY a JSON object: {\"correct\": true} or {\"correct\": false}."
     )
-    out = chat(client, prompt, temperature=0.0, max_tokens=200)
+    out = chat(client, prompt, system="detailed thinking off", temperature=0.0, max_tokens=512)
     j = extract_json(out) or {}
     return 1 if j.get("correct") is True else 0
 

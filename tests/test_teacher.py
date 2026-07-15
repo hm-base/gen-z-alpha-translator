@@ -23,3 +23,11 @@ def test_extract_json_strips_think_wrapper():
 
 def test_extract_json_none_on_garbage():
     assert extract_json("no json here") is None
+
+
+def test_extract_json_brace_in_string():
+    assert extract_json('{"a": "}"}') == {"a": "}"}
+
+
+def test_extract_json_escaped_quote():
+    assert extract_json('{"a": "he said \\"hi\\""}') == {"a": 'he said "hi"'}
