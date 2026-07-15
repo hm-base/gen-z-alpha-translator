@@ -237,10 +237,12 @@
   let MODEL_OK=false; const pend=new Set(); const offline={};  // key i:lang -> true when a fetch failed
 
   async function callModel(text,direction){
+    const ctl=new AbortController(); const timer=setTimeout(()=>ctl.abort(),15000); // never hang forever
     try{
-      const r=await fetch('/api/translate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,direction})});
+      const r=await fetch('/api/translate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,direction}),signal:ctl.signal});
       if(!r.ok) throw 0; const j=await r.json(); MODEL_OK=true; return j.output;
     }catch(e){ MODEL_OK=false; return direction==='to_slang'?demoSlangify(text):'(start  uv run python serve.py  for a live translation)'; }
+    finally{ clearTimeout(timer); }
   }
   const MAP=[[/\b(genuinely|honestly|seriously)\b/gi,"no cap"],[/\b(really|very|so)\b/gi,"lowkey"],[/\b(great|amazing|awesome|impressive|excellent|cool|good)\b/gi,"fire"],[/\b(bad|terrible|awful|ugly|outdated)\b/gi,"cooked"],[/\b(outfit|clothes)\b/gi,"fit"],[/\b(yes|sure|okay|ok)\b/gi,"bet"],[/\b(tomorrow)\b/gi,"tmr"],[/\b(you)\b/gi,"u"],[/\b(free|available)\b/gi,"unbooked"]];
   function demoSlangify(t){let s=(t||'').trim();MAP.forEach(([re,w])=>s=s.replace(re,w));return s;}
@@ -316,7 +318,7 @@
     if(ctxTarget!=null){
       const myLang=ctxLang(); const key=ctxTarget+':'+myLang;
       const m=convo[ctxTarget]; if(m) m[myLang]=undefined;   // force a fresh live translation
-      delete offline[key];
+      delete offline[key]; pend.delete(key);                 // clear a stuck/in-flight request so it re-fires
       revealed.add(ctxTarget); renderAll();
     }
     ctx.style.display='none';
@@ -346,10 +348,14 @@
   // clear the offline markers and re-render so stuck bubbles translate.
   function pingHealth(){
     fetch('/api/health').then(r=>r.ok).catch(()=>false).then(ok=>{
-      const recovered = ok && !MODEL_OK && Object.keys(offline).length;
+      const recovered = ok && !MODEL_OK;   // server came back: re-fire anything that was stuck
       MODEL_OK=ok;
-      if(recovered){ for(const k in offline) delete offline[k]; }
-      statusNote(); if(recovered) renderAll();
+      if(recovered){
+        for(const k in offline) delete offline[k];
+        pend.clear();                      // drop in-flight requests that hung during the outage
+        renderAll();
+      }
+      statusNote();
     });
   }
   pingHealth();
