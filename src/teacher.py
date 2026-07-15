@@ -33,7 +33,7 @@ def chat(client: OpenAI, prompt: str, *, system: str = "",
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
     resp = client.chat.completions.create(
-        model=os.environ.get("TEACHER_MODEL_OVERRIDE") or _default_model(),
+        model=_default_model(),
         messages=messages, temperature=temperature, max_tokens=max_tokens,
     )
     return (resp.choices[0].message.content or "").strip()

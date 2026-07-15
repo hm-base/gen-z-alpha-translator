@@ -11,7 +11,6 @@ import argparse
 import json
 import sys
 import time
-from pathlib import Path
 
 from config import RAW_DIR, SDG_TARGET
 from sdg.attributes import Recipe, sample_recipes

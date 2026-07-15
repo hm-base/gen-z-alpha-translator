@@ -14,8 +14,7 @@ import sys
 
 import pandas as pd
 
-from config import (DICT_DIR, DICT_SOURCES, EVAL_PATH, JUDGE_MODEL,
-                    TAG_TO_ENGLISH, TAG_TO_SLANG)
+from config import DICT_DIR, DICT_SOURCES, EVAL_PATH
 from teacher import chat, extract_json, get_client
 
 
