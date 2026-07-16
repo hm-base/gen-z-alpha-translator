@@ -36,6 +36,15 @@ This writes `data/processed/train.jsonl` (~31k examples) and the frozen
 
 Training needs a GPU, so do it in the notebook on Colab (see `USER_MANUAL.md`).
 
+## Run the demo (needs the trained adapter in `genz_lora_adapter/`)
+```bash
+uv run python serve.py    # Slangify two-phone chat mockup → http://127.0.0.1:8010
+uv run python app.py      # plain Gradio chat box (makes a public share link)
+```
+`serve.py` prints its URL when ready (~30–60 s to load the model). If port 8010
+is busy it auto-picks the next free port. Run ONE of the two at a time — each
+loads its own copy of the model onto the GPU.
+
 ## Adding more data later
 Drop a CSV/XLSX in `data/raw/`, add one entry to `SOURCES` in `src/config.py`,
 re-run `prepare_data.py`. Full rules: `data/README_BEFORE_UPLOAD.md`.
