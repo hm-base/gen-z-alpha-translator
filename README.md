@@ -22,9 +22,15 @@ slang prj/
 │  ├─ processed/                 ← auto-generated train.jsonl + eval.jsonl
 │  ├─ unused/                    ← files we deliberately skip (reasons in source info.csv)
 │  └─ README_BEFORE_UPLOAD.md    ← checklist before adding a dataset
-├─ results/                      ← grading_sheet.csv + metrics (created by the notebook)
-└─ docs/superpowers/specs/       ← design spec
+├─ results/                      ← grading sheets + auto metrics
+└─ docs/
+   ├─ superpowers/specs/         ← design spec (submission spine)
+   └─ archive/huimin-nvidia-pipeline/  ← archived NVIDIA/Days 3–4 experiment docs
 ```
+
+**Submission spine** (what to run / present): notebook + QLoRA adapter + human grading on
+`results/grading_sheet_post_grok.csv`. The NVIDIA-style pipeline docs are archived under
+`docs/archive/huimin-nvidia-pipeline/` (code/`synthetic_slang.csv` from that track remain in use).
 
 ## Quick start (local dev, with uv)
 ```bash
