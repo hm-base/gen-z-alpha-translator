@@ -88,6 +88,7 @@ def load_source(src: dict) -> list[dict]:
             "difficulty": _clean(row.get(src["difficulty_col"])) if src.get("difficulty_col") else "",
             "strat": _clean(row.get(src["strat_col"])) if src.get("strat_col") else "",
             "use_for_eval": bool(src.get("use_for_eval", False)),
+            "is_hard_negative": (_clean(row.get(src["hardneg_col"])).lower() in ("true", "1", "yes")) if src.get("hardneg_col") else False,
         }
         records.append(rec)
 
@@ -208,7 +209,8 @@ def build_train(train_rows: list[dict]) -> list[dict]:
     examples = []
     for r in train_rows:
         examples.append(to_chat(TAG_TO_ENGLISH, r["slang"], r["english"]))
-        examples.append(to_chat(TAG_TO_SLANG, r["english"], r["slang"]))
+        if not r.get("is_hard_negative"):
+            examples.append(to_chat(TAG_TO_SLANG, r["english"], r["slang"]))
     return examples
 
 
