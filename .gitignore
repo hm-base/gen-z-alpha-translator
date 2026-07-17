@@ -25,6 +25,8 @@ data/unused/genz_slang_usage_2020_2025.csv
 .ipynb_checkpoints/
 ~$*.pptx
 ~$*.docx
+*:Zone.Identifier
+docs/*Zone.Identifier
 
 #token
 .hugging token
